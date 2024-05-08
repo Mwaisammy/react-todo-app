@@ -11,12 +11,20 @@ function TodoWrapper() {
 
     const [todos, setTodos] = useState([])
     const addTodo = (todo) => {
-        setTodos([...todos, { id: uuidv4(), task: todo, completed: false, isEditing: false }])
+        const trimmedTodo = todo.trim();
 
-        console.log(todos)
-
-
+        if (trimmedTodo !== '') {
+            if (trimmedTodo.length > 2) { // corrected 'length' misspelling
+                setTodos([...todos, { id: uuidv4(), task: trimmedTodo, completed: false, isEditing: false }]);
+            } else {
+                window.alert("Todo must contain more than two characters!");
+            }
+        } else {
+            window.alert("Add a todo first");
+        }
+        
     }
+      
 
     const toggleCompleted = (id) => {
         setTodos(todos.map(todo => todo.id === id ? { ...todo, completed: !todo.completed } : todo))
@@ -30,8 +38,11 @@ function TodoWrapper() {
     }
 
     const editTodo = (id) => {
-        setTodos(todos.map( todo => todo.id === id ? {
-            ...todo, isEditing : !todo.isEditing} : todo))
+         setTodos(todos.map( todo => todo.id === id ? {
+                        ...todo, isEditing : !todo.isEditing} : todo))    
+                
+        
+       
         
 
     }
@@ -66,3 +77,5 @@ function TodoWrapper() {
 }
 
 export default TodoWrapper
+
+

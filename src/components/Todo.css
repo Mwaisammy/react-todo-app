@@ -1,33 +1,28 @@
-.todo{
-    margin-top: 20px;
-    padding: 15px ;
-    background: #fff;
-    width: 100%;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-
-    
-
-
+.todo {
+  margin-top: 20px;
+  padding: 15px;
+  background: #fff;
+  width: 100%;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
 }
 
-.todos-btn{
-    display: flex;
-    gap: 20px;
-
+.todos-btn {
+  display: flex;
+  gap: 20px;
 }
 
-.completed{
-    color: #555;
-    text-decoration: line-through;
+.completed {
+  color: #555;
+  text-decoration: line-through;
 }
 
 .icon {
-    color: #555;
+  color: #555;
 }
-.icon:hover{
-    color: black;
+.icon:hover {
+  color: black;
 }
